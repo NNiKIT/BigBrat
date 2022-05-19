@@ -1,0 +1,24 @@
+classification_model:
+    model_name : 'inception'
+    TRAIN_DIR: 'data/train/'
+    TEST_DIR: 'data/test/'
+    VAL_DIR: 'data/val/'
+    Itmo_DIR: './data/office/'
+    IMG_SIZE: [224,224]
+    BATCH_SIZE: 32
+    NUM_EPOCHS: 50
+    DEVICE: 'cuda:3'
+    learning_rate: 0.0004
+    n_classes: 2
+    feature_extract: true
+    use_pretrained: false
+    save_torchscript: true
+    weights : false
+    confusion_matrix: 'edinburgh' # should be `false` or one of ['office','edinburgh']
+    get_metrics: true
+    wandb:
+        logging : true
+        project_name : "seat_classification"
+        run_name : "Inception_not_pretrained" #"EfficientNet_pretrained"
+        team_name : "cv-itmo"
+        model_name : "Inception_not_pretrained" # "EfficientNet_pretrained"
